@@ -1,0 +1,18 @@
+<input class="search" id='searchQuery' [(ngModel)]='searchQuery' placeholder="Search for images">
+<br>
+<button (click)="searchImages(searchQuery)" type="button">Find Images</button>
+<!-- <input type="text" (change)="onChangeEvent($event)" /> -->
+<!-- <input type="text" (keypress)="onKeypressEvent($event)" /> -->
+
+<div *ngIf="searching"> Fetching... </div>
+    <div *ngFor="let image of images" class=image-container>
+        <a href="{{ image.pageURL }}" target="_bank">
+           User: {{ image.user }}
+          <img src="{{image.webformatURL}}">
+            <p>Tags: {{ image.tags }}</p>
+            <p>Comments: {{ image.comments }}</p>
+            <p>Likes: {{ image.likes }}</p>
+        </a>
+      <br><br>
+</div>
+
