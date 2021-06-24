@@ -1,0 +1,39 @@
+.divbutton {
+
+  width: fit-content;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.buttoncontent {
+  font-family: Apercu, sans-serif;
+  text-rendering: optimizeLegibility;
+
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+
+  border-radius: 24px;
+  height: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.item{
+    padding-right: 2em;
+    padding-left: 2em;
+
+}
+.prettyDiv {
+  margin-left: 2em;
+  margin-right: 1em;
+
+    display: flex;
+    align-items: center;
+
+    }

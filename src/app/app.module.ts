@@ -4,10 +4,11 @@ import {HttpClient, HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/
 import { AppComponent } from './app.component';
 import { ImageComponent } from './image/image.component';
 import { NoopInterceptor } from './MyInterceptor';
-import { ImageService } from './image.service';
+import { ImageService } from './artist.service';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginButtonComponent } from './login-button/login-button.component';
+import { RatingComponent } from './rating/rating.component';
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
 ];
@@ -16,7 +17,8 @@ export const httpInterceptorProviders = [
     AppComponent,
     ImageComponent,
     NavbarComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    RatingComponent
   ],
   imports: [
     HttpClientModule,

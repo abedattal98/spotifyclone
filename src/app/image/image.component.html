@@ -1,18 +1,104 @@
-<input class="search" id='searchQuery' [(ngModel)]='searchQuery' placeholder="Search for images">
-<br>
-<button (click)="searchImages(searchQuery)" type="button">Find Images</button>
-<!-- <input type="text" (change)="onChangeEvent($event)" /> -->
-<!-- <input type="text" (keypress)="onKeypressEvent($event)" /> -->
-
-<div *ngIf="searching"> Fetching... </div>
-    <div *ngFor="let image of images" class=image-container>
-        <a href="{{ image.pageURL }}" target="_bank">
-           User: {{ image.user }}
-          <img src="{{image.webformatURL}}">
-            <p>Tags: {{ image.tags }}</p>
-            <p>Comments: {{ image.comments }}</p>
-            <p>Likes: {{ image.likes }}</p>
-        </a>
-      <br><br>
+<input
+  class="search"
+  id="searchQuery"
+  [(ngModel)]="searchQuery"
+  placeholder="Search for An Artist"
+/>
+<br />
+<button (click)="searchImages(searchQuery)" type="button">Search</button>
+<div class="card-group">
+  <div *ngIf="searching" class="card"><p>Fetching...</p></div>
+  <div *ngFor="let image of images" class="col-md-3 col-sm-6 col-xs-12">
+    <img
+      class="card-img-top"
+      [src]="image.images[0]?.url"
+      alt=" Card image cap  "
+    />
+    <div *ngIf="(50 >image.popularity) ">
+      <i class="" size="16" color="#1C1C1C"><svg xmlns="http://www.w3.org/2000/svg"
+        fill="#1C1C1C" width="16" height="16" viewBox="0 0 20 20" 
+        role="img" >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.6667 0H3.33333C1.5 0 0 1.5 0 3.33333V16.6667C0 18.5 1.5 20 3.33333 20H16.6667C18.5 20 20 18.5 20 16.6667V3.33333C20 1.5 18.5 0 16.6667 0ZM16.6667 8.75L13.5833 11.5L14.5 15.5833C14.5833 15.9167 14.5 16.1667 14.25 16.4167C14.1667 16.5 14 16.5833 13.8333 16.5833C13.6667 16.5833 13.5833 16.5833 13.4167 16.5L10 14.25L6.58333 16.3333C6.33333 16.5 6 16.5 5.75 16.3333C5.5 16.1667 5.41667 15.8333 5.5 15.5L6.41667 11.5L3.33333 8.75C3.08333 8.5 3 8.25 3.08333 7.91667C3.16667 7.66667 3.41667 7.41667 3.75 7.41667L7.75 7L9.33333 3.16667C9.41667 3 9.58333 2.83333 9.75 2.75C10.0833 2.58333 10.5833 2.75 10.6667 3.16667L12.25 7L16.25 7.33333C16.5833 7.33333 16.8333 7.58333 16.9167 7.83333C17 8.16667 16.9167 8.5 16.6667 8.75Z">
+      </path></svg></i>
+      <i class="" size="16" color="#1C1C1C"><svg xmlns="http://www.w3.org/2000/svg"
+        fill="#1C1C1C" width="16" height="16" viewBox="0 0 20 20" 
+        role="img" >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.6667 0H3.33333C1.5 0 0 1.5 0 3.33333V16.6667C0 18.5 1.5 20 3.33333 20H16.6667C18.5 20 20 18.5 20 16.6667V3.33333C20 1.5 18.5 0 16.6667 0ZM16.6667 8.75L13.5833 11.5L14.5 15.5833C14.5833 15.9167 14.5 16.1667 14.25 16.4167C14.1667 16.5 14 16.5833 13.8333 16.5833C13.6667 16.5833 13.5833 16.5833 13.4167 16.5L10 14.25L6.58333 16.3333C6.33333 16.5 6 16.5 5.75 16.3333C5.5 16.1667 5.41667 15.8333 5.5 15.5L6.41667 11.5L3.33333 8.75C3.08333 8.5 3 8.25 3.08333 7.91667C3.16667 7.66667 3.41667 7.41667 3.75 7.41667L7.75 7L9.33333 3.16667C9.41667 3 9.58333 2.83333 9.75 2.75C10.0833 2.58333 10.5833 2.75 10.6667 3.16667L12.25 7L16.25 7.33333C16.5833 7.33333 16.8333 7.58333 16.9167 7.83333C17 8.16667 16.9167 8.5 16.6667 8.75Z">
+      </path></svg></i>
+      <i class="" size="16" color="#1C1C1C"><svg xmlns="http://www.w3.org/2000/svg"
+        fill="#1C1C1C" width="16" height="16" viewBox="0 0 20 20" 
+        role="img" >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.6667 0H3.33333C1.5 0 0 1.5 0 3.33333V16.6667C0 18.5 1.5 20 3.33333 20H16.6667C18.5 20 20 18.5 20 16.6667V3.33333C20 1.5 18.5 0 16.6667 0ZM16.6667 8.75L13.5833 11.5L14.5 15.5833C14.5833 15.9167 14.5 16.1667 14.25 16.4167C14.1667 16.5 14 16.5833 13.8333 16.5833C13.6667 16.5833 13.5833 16.5833 13.4167 16.5L10 14.25L6.58333 16.3333C6.33333 16.5 6 16.5 5.75 16.3333C5.5 16.1667 5.41667 15.8333 5.5 15.5L6.41667 11.5L3.33333 8.75C3.08333 8.5 3 8.25 3.08333 7.91667C3.16667 7.66667 3.41667 7.41667 3.75 7.41667L7.75 7L9.33333 3.16667C9.41667 3 9.58333 2.83333 9.75 2.75C10.0833 2.58333 10.5833 2.75 10.6667 3.16667L12.25 7L16.25 7.33333C16.5833 7.33333 16.8333 7.58333 16.9167 7.83333C17 8.16667 16.9167 8.5 16.6667 8.75Z">
+      </path></svg></i>
+      <i class="" size="16" color="#1C1C1C"><svg xmlns="http://www.w3.org/2000/svg"
+        fill="#1C1C1C" width="16" height="16" viewBox="0 0 20 20" 
+        role="img" >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.6667 0H3.33333C1.5 0 0 1.5 0 3.33333V16.6667C0 18.5 1.5 20 3.33333 20H16.6667C18.5 20 20 18.5 20 16.6667V3.33333C20 1.5 18.5 0 16.6667 0ZM16.6667 8.75L13.5833 11.5L14.5 15.5833C14.5833 15.9167 14.5 16.1667 14.25 16.4167C14.1667 16.5 14 16.5833 13.8333 16.5833C13.6667 16.5833 13.5833 16.5833 13.4167 16.5L10 14.25L6.58333 16.3333C6.33333 16.5 6 16.5 5.75 16.3333C5.5 16.1667 5.41667 15.8333 5.5 15.5L6.41667 11.5L3.33333 8.75C3.08333 8.5 3 8.25 3.08333 7.91667C3.16667 7.66667 3.41667 7.41667 3.75 7.41667L7.75 7L9.33333 3.16667C9.41667 3 9.58333 2.83333 9.75 2.75C10.0833 2.58333 10.5833 2.75 10.6667 3.16667L12.25 7L16.25 7.33333C16.5833 7.33333 16.8333 7.58333 16.9167 7.83333C17 8.16667 16.9167 8.5 16.6667 8.75Z">
+      </path></svg></i>
+      <i class="" size="16" color="#1C1C1C"><svg xmlns="http://www.w3.org/2000/svg"
+        fill="#1C1C1C" width="16" height="16" viewBox="0 0 20 20" 
+        role="img" >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.6667 0H3.33333C1.5 0 0 1.5 0 3.33333V16.6667C0 18.5 1.5 20 3.33333 20H16.6667C18.5 20 20 18.5 20 16.6667V3.33333C20 1.5 18.5 0 16.6667 0ZM16.6667 8.75L13.5833 11.5L14.5 15.5833C14.5833 15.9167 14.5 16.1667 14.25 16.4167C14.1667 16.5 14 16.5833 13.8333 16.5833C13.6667 16.5833 13.5833 16.5833 13.4167 16.5L10 14.25L6.58333 16.3333C6.33333 16.5 6 16.5 5.75 16.3333C5.5 16.1667 5.41667 15.8333 5.5 15.5L6.41667 11.5L3.33333 8.75C3.08333 8.5 3 8.25 3.08333 7.91667C3.16667 7.66667 3.41667 7.41667 3.75 7.41667L7.75 7L9.33333 3.16667C9.41667 3 9.58333 2.83333 9.75 2.75C10.0833 2.58333 10.5833 2.75 10.6667 3.16667L12.25 7L16.25 7.33333C16.5833 7.33333 16.8333 7.58333 16.9167 7.83333C17 8.16667 16.9167 8.5 16.6667 8.75Z">
+      </path></svg></i>
+      {{image.popularity}}</div>
+   
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="{{ image.external_urls.spotify }}">{{ image.name }}</a>
+      </h5>
+      <b class="card-text">{{ image.followers.total }}</b>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+    </div>
+  </div>
 </div>
 
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        This card has supporting text below as a natural lead-in to additional
+        content.
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+</div>

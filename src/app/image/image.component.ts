@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../image.service';
+import { ImageService } from '../artist.service';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 @Component({
@@ -15,35 +15,30 @@ export class ImageComponent implements OnInit {
 
   handleSuccess(data) {
     this.imagesFound = true;
-    this.images = data.hits;
-    console.log(data.hits);
+    this.images = data.artists.items;
+    console.log(this.images);
   }
-  constructor(private _imageService: ImageService) {
-    // this.searchImages('newYork');
-  }
+  constructor(private _imageService: ImageService) {}
   searchImages(query: string) {
     this.searching = true;
     return this._imageService.getImage(query).subscribe((data: any[]) => {
-      console.log(data);
       this.handleSuccess(data);
-      this.searching = false;
+      if (data) {
+        this.searching = false;
+      }
     });
   }
-  // onChangeEvent(event: any){
-  //   console.log(event.target.value);
-  //   this.searchImages(event.target.value)
-  // }
-  // onKeypressEvent(event: any){
-  //   console.log(event.target.value);
-  //   this.searchImages(event.target.value)
-  // }
 
   ngOnInit(): void {
     console.log(this.searchQuery);
     const searchBox = document.getElementById('searchQuery');
     const keyup$ = fromEvent(searchBox, 'keyup');
     keyup$.pipe(debounceTime(800)).subscribe((x) => {
-      console.log(this.searchQuery);
+      if (this.searchQuery == '' || this.searchQuery == ' ') {
+        this.images = null;
+        this.searching = false;
+        return;
+      }
       this.searchImages(this.searchQuery);
     });
   }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from './image.service';
+import { ImageService } from './artist.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
