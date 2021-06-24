@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../artist.service';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'image',
   templateUrl: './image.component.html',
@@ -12,13 +13,14 @@ export class ImageComponent implements OnInit {
   imagesFound: boolean = false;
   searching: boolean = false;
   searchQuery: string = '';
+  selectedid=''
 
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.artists.items;
     console.log(this.images);
   }
-  constructor(private _imageService: ImageService) {}
+  constructor(private _imageService: ImageService, private route:Router) {}
   searchImages(query: string) {
     this.searching = true;
     return this._imageService.getImage(query).subscribe((data: any[]) => {
@@ -28,7 +30,18 @@ export class ImageComponent implements OnInit {
       }
     });
   }
+  onClick(event) {
+    var target = event.target || event.srcElement || event.currentTarget;
+    var idAttr = target.attributes.id;
+    var value = idAttr.nodeValue;
+    this.GoToAlbum(value)
+    
+  }
+  GoToAlbum(x:string){
 
+    this.route.navigate(['artist',x])
+  }
+  
   ngOnInit(): void {
     console.log(this.searchQuery);
     const searchBox = document.getElementById('searchQuery');

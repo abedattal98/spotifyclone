@@ -9,6 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { RatingComponent } from './rating/rating.component';
+import { AlbumComponent } from './album/album.component';
+import { RouterModule, Routes } from '@angular/router';
+const routes:Routes = [
+  {path:'artist/:id', component:AlbumComponent},
+  {path:'rating',component:RatingComponent},
+  {path:'',component:ImageComponent}
+]
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
 ];
@@ -18,12 +25,14 @@ export const httpInterceptorProviders = [
     ImageComponent,
     NavbarComponent,
     LoginButtonComponent,
-    RatingComponent
+    RatingComponent,
+    AlbumComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [HttpClient, ImageService ],
   bootstrap: [AppComponent]

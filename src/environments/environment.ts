@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  PIXABAY_API_KEY: '20600736-40e180eaa1fbf6d863349d9ce',
-  Access_Token: 'BQCrRZj0N-LqOvTaQsKOnk-wtdS9kKutLlKIz2bbLXOauNTmwem_do89EAFqv76qGzbdtJt2fV69DJjEGFnCg_B--dcpnSQxaL-NUY2472iH0n1P1TVTwJJAF5MsPZCrH-vIWnQS-2O1dsM6HmTMrcI6YID9DsqegLNIHFZNqFuRZMpfuVUgQQhIuHM',
-  ARTIST_URL:'https://api.spotify.com/v1/search?q=',
+  PIXABAY_API_KEY: '6d72018a920744d0b0f72afaec9b5838',
+  Access_Token: 'BQD1p2oWHKGvsHVPwKItQEXkDJkrvluEbeCBnUxUxFUesPArLBQU56Kc5GiLt4Gph0ryf3FLwOTKmv09ZsFnV8f_shMljKe0yqzsFb9424q3a60dFC2sxN1W1c06whj_NLtDPfRUfxj_tkaNOZmvwG8lBkE49tuTlB5nQToyCnzwTBCVLIvyyg7Q8sw',
+  ARTIST_URL:'https://api.spotify.com/v1/',
   PIXABAY_URL:'https://pixabay.com/api/?key='
 };
 
