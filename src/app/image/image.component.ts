@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../artist.service';
+import { ArtistService } from '../artist.service';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { Router } from '@angular/router';
@@ -20,10 +20,10 @@ export class ImageComponent implements OnInit {
     this.images = data.artists.items;
     console.log(this.images);
   }
-  constructor(private _imageService: ImageService, private route:Router) {}
+  constructor(private _artistService: ArtistService, private route:Router) {}
   searchImages(query: string) {
     this.searching = true;
-    return this._imageService.getImage(query).subscribe((data: any[]) => {
+    return this._artistService.getImage(query).subscribe((data: any[]) => {
       this.handleSuccess(data);
       if (data) {
         this.searching = false;

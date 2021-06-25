@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class ImageService {
+export class AlbumService {
   private query: string;
   private ARTIST_URL: string = environment.ARTIST_URL;
   private SPOTIFY_AUTH: string = environment.Access_Token
@@ -18,5 +18,7 @@ export class ImageService {
         'Authorization' : 'Bearer ' + this.SPOTIFY_AUTH
       })
     return this.apiCaller
-      .request('GET',this.ARTIST_URL+'search?q=' + artist + '&type=artist',{headers})
+      .request('GET',this.ARTIST_URL+'artists/'+artist +'/albums',{headers})
+      
 }}
+

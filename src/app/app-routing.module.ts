@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { RatingComponent } from './rating/rating.component';
 import { AlbumComponent } from './album/album.component';
+import { ImageComponent } from './image/image.component';
+import { LoginButtonComponent } from './login-button/login-button.component';
 
 const routes:Routes = [
   {path:'artist/:id', component:AlbumComponent},
   {path:'rating',component:RatingComponent},
-  // {path:'',component:ImageComponent}
+  {path:'search',component:ImageComponent},
+  { path: 'login', component:LoginButtonComponent },
+  { path: '',   redirectTo: '/search', pathMatch: 'full' }
+
 ]
 
 @NgModule({
