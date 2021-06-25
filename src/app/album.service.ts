@@ -19,5 +19,4 @@ export class ImageService {
       })
     return this.apiCaller
       .request('GET',this.ARTIST_URL+'search?q=' + artist + '&type=artist',{headers})
-      
 }}

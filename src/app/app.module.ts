@@ -11,11 +11,8 @@ import { LoginButtonComponent } from './login-button/login-button.component';
 import { RatingComponent } from './rating/rating.component';
 import { AlbumComponent } from './album/album.component';
 import { RouterModule, Routes } from '@angular/router';
-const routes:Routes = [
-  {path:'artist/:id', component:AlbumComponent},
-  {path:'rating',component:RatingComponent},
-  {path:'',component:ImageComponent}
-]
+import { AppRoutingModule } from './app-routing.module';
+
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
 ];
@@ -32,7 +29,7 @@ export const httpInterceptorProviders = [
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
   ],
   providers: [HttpClient, ImageService ],
   bootstrap: [AppComponent]

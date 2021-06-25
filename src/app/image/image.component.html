@@ -51,7 +51,9 @@
       <h5 class="card-title">
         <b (click)='onClick($event)' id={{image.id}}>{{ image.name }}</b>
       </h5>
-      <app-rating [offset1]="(image.popularity%10)*10+'%'"></app-rating>
+      <!-- <app-rating [offset1]="(image.popularity%10)*10+'%'"></app-rating> -->
+      <p></p>
+      <app-rating [rating]="(image.popularity)/100 *5" ></app-rating>
 
       <b class="card-text">{{ image.followers.total }}</b>
       <p class="card-text">
