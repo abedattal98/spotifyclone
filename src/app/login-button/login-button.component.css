@@ -37,3 +37,8 @@
     align-items: center;
 
     }
+    .vertical-center {
+      margin: auto;  
+      margin-bottom: 10%;
+      margin-top: 20%;
+        }
