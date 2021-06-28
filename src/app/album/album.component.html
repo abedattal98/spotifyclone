@@ -1,4 +1,5 @@
-<div *ngFor="let image of images" class=" col-md-4 col-lg-3 col-sm-6 col-xs-12">
+<div class="container-fluid content-row card-group">
+  <div *ngFor="let image of images" class=" col-md-4 col-lg-3 col-sm-6 col-xs-12  h-100">
     <img
       class="card-img-top img-fluid"
       [src]="image.images[0]?.url"
@@ -10,10 +11,14 @@
         <b  id={{image.id}}>{{ image.name }}</b>
       </h5>
       <p></p>
-
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        <b *ngFor="let artist of image.artists">{{artist.name}}  <p></p></b>
       </p>
+      {{image.release_date}}
+      <p>{{image.total_tracks}} tracks</p>
     </div>
+
+      <button class="btn card-footer "> <a href={{image.external_urls.spotify}} target="_blank">Preview</a></button>
+      <p></p>
   </div>
+</div>

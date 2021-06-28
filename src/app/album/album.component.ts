@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
-import { AlbumService } from '../album.service';
+import { AlbumService } from '../_service/album.service'; 
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -9,9 +9,7 @@ import { AlbumService } from '../album.service';
 export class AlbumComponent implements OnInit {
   id = ''
   images: any[];
-  searchQuery: string = '';
-  selectedid=''
-
+  artists: any[]
   handleSuccess(data) {
     this.images = data.items;
     console.log(this.images);

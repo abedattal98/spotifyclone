@@ -7,8 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class ArtistService {
   private query: string;
   private ARTIST_URL: string = environment.ARTIST_URL;
-  private SPOTIFY_AUTH: string = environment.Access_Token
-
+  private SPOTIFY_AUTH: string = localStorage.getItem('accessToken')
   constructor(private apiCaller: HttpClient) {
   }  
   getImage(artist:string) {

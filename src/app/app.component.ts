@@ -1,15 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AlbumService } from './album.service';
-import { ArtistService } from './artist.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  // image : ArtistService = null;
-  // image2: AlbumService  = null
+
   constructor(private apiCaller : HttpClient)
   {
 
