@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthenticationService } from '../_service/authentication.service';
@@ -8,20 +9,26 @@ import { AuthenticationService } from '../_service/authentication.service';
   styleUrls: ['./login-button.component.css']
 })
 export class LoginButtonComponent implements OnInit {
-   private accessToken: string;
-  id: any;
+   private accessToken: string = null;
+    id: string;
+    snapshotParam = "initial value";
+    subscribedParam = "initial value";
+    myvar=''
 
-  constructor(private _auth: AuthenticationService, private _router: Router , private activatedRoute: ActivatedRoute) { 
+  constructor(private _auth: AuthenticationService, private _router: Router , private route: ActivatedRoute) { 
       
-    if (this._auth.loggedIn) {  
-      this._router.navigate(['search']);  
-    }  
+    
   }  
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.id = this.activatedRoute.snapshot.paramMap.get('')
-      console.log(this.id)
-    });
+    this.myvar = this._router.url 
+    
+    console.log(this.myvar.substring(8))
+    this.accessToken=this.myvar.substring(8)
+    if (this.accessToken!=null) {  
+      if (this._auth.loggedIn) {  
+        this._router.navigate(['search']);  
+      }  
+        }  
   }
   goToLink(url: string){
     

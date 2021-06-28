@@ -21,8 +21,6 @@ const routes:Routes = [
       title: 'Home'   
     }  
   },  
-  { path: '?token=', component: LoginButtonComponent },
-
   {  
     path: 'login',  
     component: LoginButtonComponent,  
@@ -30,7 +28,6 @@ const routes:Routes = [
       title: 'Login'  
     }  
   },  
-
   {  
     path: '',  
     component: LoginButtonComponent,  
