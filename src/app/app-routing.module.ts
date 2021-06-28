@@ -9,10 +9,8 @@ import { AuthGuard } from './_service/auth-guard.service';
 
 const routes:Routes = [
   {path:'artist/:id', component:AlbumComponent},
+  {path:'search/:id', component:ImageComponent},
   {path:'rating',component:RatingComponent},
-  // {path:'search',component:ImageComponent},
-  // { path:'login', component:LoginButtonComponent },
-  // { path: '',   redirectTo: '/login', pathMatch: 'full' }
   {  
     path: 'search',  
     component: ImageComponent,  

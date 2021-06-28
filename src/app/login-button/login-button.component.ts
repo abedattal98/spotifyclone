@@ -25,6 +25,7 @@ export class LoginButtonComponent implements OnInit {
     console.log(this.myvar.substring(8))
     this.accessToken=this.myvar.substring(8)
     if (this.accessToken!=null) {  
+      this.login()
       if (this._auth.loggedIn) {  
         this._router.navigate(['search']);  
       }  
@@ -38,10 +39,10 @@ export class LoginButtonComponent implements OnInit {
   login() {  
 
     
-    localStorage.setItem('currentUser', "loggedin");  
     localStorage.setItem('accessToken', this.accessToken);  
 
     this._router.navigate(['search']);  
 
   } 
+  
 }

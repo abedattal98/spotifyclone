@@ -4,10 +4,18 @@
   [(ngModel)]="searchQuery"
   placeholder="Search for An Artist"
 />
+<div class="container">    
+  You are successfully logged in with Spotify
+  <button (click)="logout()" class="btn btn-success text-white">Logout</button>    
+</div>
+<!-- <button (click)="searchImages(searchQuery)" type="button">Search</button> -->
 <br />
-<button (click)="searchImages(searchQuery)" type="button">Search</button>
+
+<div *ngIf="searching" class="card"><p>Fetching...
+
+</div>
 <div class="card-group">
-  <div *ngIf="searching" class="card"><p>Fetching...</p></div>
+  
   <div *ngFor="let image of images" class=" col-md-4 col-lg-3 col-sm-6 col-xs-12">
     <img
       class="card-img-top img-fluid"
@@ -27,49 +35,3 @@
   </div>
 </div>
 
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap" />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </p>
-      <p class="card-text">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap" />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This card has supporting text below as a natural lead-in to additional
-        content.
-      </p>
-      <p class="card-text">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap" />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </p>
-      <p class="card-text">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </p>
-    </div>
-  </div>
-</div>
-<div class="container">    
-  <h1>You are successfully logged in</h1>    
-  <button (click)="logout()" class="btn btn-danger">Logout</button>    
-</div> 

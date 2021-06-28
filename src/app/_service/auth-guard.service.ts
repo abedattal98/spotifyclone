@@ -3,10 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 @Injectable({ providedIn: 'root' })  
 export class AuthGuard implements CanActivate {  
     constructor(private _router: Router) { }  
-    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {  
-        // if (localStorage.getItem('currentUser')) {  
-        //     return true;  
-        // }  
+    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {   
         if (localStorage.getItem('accessToken')) {  
           return true;  
       }  
