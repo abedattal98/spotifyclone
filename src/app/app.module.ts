@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AlbumService } from './_service/album.service';
 import { AuthenticationService } from './_service/authentication.service';
 
+
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
 ];
@@ -21,7 +22,7 @@ export const httpInterceptorProviders = [
   declarations: [
     AppComponent,
     ImageComponent,
-    NavbarComponent,
+    NavbarComponent,  
     LoginButtonComponent,
     RatingComponent,
     AlbumComponent
@@ -32,7 +33,7 @@ export const httpInterceptorProviders = [
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [HttpClient, ArtistService,AlbumService,AuthenticationService ],
+  providers: [HttpClient, ArtistService,AlbumService,AuthenticationService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
