@@ -1,5 +1,5 @@
 <div class="  container-fluid content-row card-group">
-  <div *ngFor="let image of images" class="  col-md-4 col-lg-3 col-sm-6 col-xs-12  h-100">
+  <div *ngFor="let image of images" class=" divc col-md-4 col-lg-3 col-sm-6 col-xs-12  h-100">
 
     <div class="">
     <img
@@ -13,9 +13,10 @@
         <b  id={{image.id}}>{{ image.name }}</b>
       </h5>
       <p></p>
-      <p class="card-text">
-        <b *ngFor="let artist of image.artists">{{artist.name}}  <p></p></b>
-      </p>
+      <div class=" card-text">
+        <div class="cardt"><b  *ngFor="let artist of image.artists">{{artist.name}}  <p></b></div>
+      </div>
+      <p></p>
       {{image.release_date}}
       <p>{{image.total_tracks}} tracks</p>
     </div>
