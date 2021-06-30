@@ -12,9 +12,7 @@ export class RatingComponent {
   rating = 0;
   offset1:string = null
   private get numberOfFullStars(): number {
-   // console.log(this.rating)
     this.offset1=(((this.rating*20)%10)/0.1)+'%'
-    //console.log(this.offset1)
     return Math.floor(this.rating);
   }
 

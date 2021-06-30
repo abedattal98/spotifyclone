@@ -18,9 +18,8 @@ export class ImageComponent implements OnInit {
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.artists.items;
-    console.log(this.images);
   }
-  constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router) {}
+  constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router ) {}
 
   searchImages(query: string) {
 
@@ -46,7 +45,6 @@ export class ImageComponent implements OnInit {
 
   
   ngOnInit(): void {
-    console.log(this.searchQuery);
     const searchBox = document.getElementById('searchQuery');
     const keyup$ = fromEvent(searchBox, 'keyup');
     keyup$.pipe(debounceTime(800)).subscribe((x) => {

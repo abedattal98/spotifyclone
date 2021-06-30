@@ -12,7 +12,6 @@ export class AlbumComponent implements OnInit {
   artists: any[]
   handleSuccess(data) {
     this.images = data.items;
-    console.log(this.images);
   }
   constructor(private route: ActivatedRoute, private _albumService: AlbumService) { }
   searchImages(query: string) {
@@ -26,7 +25,6 @@ export class AlbumComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.id = this.route.snapshot.paramMap.get('id')
-      console.log(this.id)
       this.searchImages(this.id)
     });
   }

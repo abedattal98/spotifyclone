@@ -21,14 +21,10 @@ export class LoginButtonComponent implements OnInit {
   }  
   ngOnInit(): void {
     this.myvar = this._router.url 
-    
-    console.log(this.myvar.substring(8))
     this.accessToken=this.myvar.substring(8)
     if (this.accessToken!=null) {  
       this.login()
-      if (this._auth.loggedIn) {  
-        this._router.navigate(['search']);  
-      }  
+        this._router.navigate(['search']);    
         }  
   }
   goToLink(url: string){

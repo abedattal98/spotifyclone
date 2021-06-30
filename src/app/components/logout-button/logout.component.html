@@ -2,3 +2,4 @@
     You are successfully logged in with Spotify
     <button (click)="logout()" class="btn ">Logout</button>    
 </div>
+<li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
