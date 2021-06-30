@@ -20,7 +20,7 @@ export class ImageComponent implements OnInit {
     this.images = data.artists.items;
     console.log(this.images);
   }
-  constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router, private authenticationService: AuthenticationService) {}
+  constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router) {}
 
   searchImages(query: string) {
 

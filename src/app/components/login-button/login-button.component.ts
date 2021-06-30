@@ -15,7 +15,7 @@ export class LoginButtonComponent implements OnInit {
     subscribedParam = "initial value";
     myvar=''
 
-  constructor(private _auth: AuthenticationService, private _router: Router , private route: ActivatedRoute) { 
+  constructor(private _auth: AuthenticationService, private _router: Router) { 
       
     
   }  
