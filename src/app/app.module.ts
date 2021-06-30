@@ -2,17 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { ImageComponent } from './image/image.component';
+import { ImageComponent } from './components/image/image.component';
 import { NoopInterceptor } from './MyInterceptor';
-import { ArtistService } from './_service/artist.service';
+import { ArtistService } from './services/artist.service';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LoginButtonComponent } from './login-button/login-button.component';
-import { RatingComponent } from './rating/rating.component';
-import { AlbumComponent } from './album/album.component';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { AlbumComponent } from './components/album/album.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AlbumService } from './_service/album.service';
-import { AuthenticationService } from './_service/authentication.service';
+import { AlbumService } from './services/album.service';
+import { AuthenticationService } from './services/authentication.service';
+import { LoginComponent } from './pages/login/login.component';
+import { SearchComponent } from './pages/search/search.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { LogoutComponent } from './components/logout-button/logout.component';
 
 
 export const httpInterceptorProviders = [
@@ -25,7 +29,11 @@ export const httpInterceptorProviders = [
     NavbarComponent,  
     LoginButtonComponent,
     RatingComponent,
-    AlbumComponent
+    AlbumComponent,
+    LoginComponent,
+    SearchComponent,
+    AlbumsComponent,
+    LogoutComponent
   ],
   imports: [
     HttpClientModule,

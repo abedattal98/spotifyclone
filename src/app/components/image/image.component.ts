@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistService } from '../_service/artist.service';
+import { ArtistService } from '../../services/artist.service';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../_service/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 @Component({
   selector: 'image',
   templateUrl: './image.component.html',
@@ -21,10 +21,7 @@ export class ImageComponent implements OnInit {
     console.log(this.images);
   }
   constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router, private authenticationService: AuthenticationService) {}
-  logout() {  
-    this.authenticationService.logout();  
-    this.route.navigate(['']);  
-  }  
+
   searchImages(query: string) {
 
     this.searching = true;

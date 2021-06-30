@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { RatingComponent } from './rating/rating.component';
-import { AlbumComponent } from './album/album.component';
-import { ImageComponent } from './image/image.component';
-import { LoginButtonComponent } from './login-button/login-button.component';
-import { AuthGuard } from './_service/auth-guard.service';
+
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginComponent } from './pages/login/login.component';
+import { SearchComponent } from './pages/search/search.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
 
 const routes:Routes = [
-  {path:'artist/:id', component:AlbumComponent},
-  {path:'search/:id', component:ImageComponent},
-  {path:'rating',component:RatingComponent},
+  {path:'artist/:id', component:AlbumsComponent},
+  {path:'search/:id', component:SearchComponent},
   {  
     path: 'search',  
-    component: ImageComponent,  
+    component: SearchComponent,  
     canActivate: [AuthGuard],  
     data: {  
       title: 'Home'   
@@ -21,14 +19,14 @@ const routes:Routes = [
   },  
   {  
     path: 'login',  
-    component: LoginButtonComponent,  
+    component: LoginComponent,  
     data: {  
       title: 'Login'  
     }  
   },  
   {  
     path: '',  
-    component: LoginButtonComponent,  
+    component: LoginComponent,  
     data: {  
       title: 'Login'  
     }  
