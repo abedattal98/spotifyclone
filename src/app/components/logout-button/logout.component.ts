@@ -10,7 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LogoutComponent implements OnInit {
 
   constructor(private route:Router, private authenticationService: AuthenticationService) {  }
-
+  isLoggedIn=false
   logout() {  
     this.authenticationService.logout();  
     this.route.navigate(['']);  
