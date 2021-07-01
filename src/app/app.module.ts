@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SearchComponent } from './pages/search/search.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { LogoutComponent } from './components/logout-button/logout.component';
+import { InputSearchComponent } from './components/input-search/input-search.component';
 
 
 export const httpInterceptorProviders = [
@@ -33,7 +34,8 @@ export const httpInterceptorProviders = [
     LoginComponent,
     SearchComponent,
     AlbumsComponent,
-    LogoutComponent
+    LogoutComponent,
+    InputSearchComponent
   ],
   imports: [
     HttpClientModule,
