@@ -5,7 +5,10 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {  
   logout() {  
     localStorage.removeItem('accessToken'); 
-    this.loggedIn=false 
   }  
-  public  loggedIn:  boolean  = false  
-} 
+
+  get running(): boolean {
+    if( localStorage.getItem('accessToken'))
+    return true
+  }
+}

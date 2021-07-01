@@ -1,5 +1,4 @@
-<div class="container p-3">    
-    You are successfully logged in with Spotify
-    <button (click)="logout()" class="btn ">Logout</button>    
+<div *ngIf="running" class=" ">    
+    <b class="text-white"> You are logged in with Spotify </b>
+    <button (click)="logout()" class="btn btn-outline-light ">Logout</button>    
 </div>
-<li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>

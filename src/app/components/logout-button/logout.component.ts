@@ -7,16 +7,21 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './logout.component.html',
   styleUrls: ['./logout.component.css']
 })
-export class LogoutComponent implements OnInit {
-
+export class LogoutComponent implements OnInit {;
   constructor(private route:Router, private authenticationService: AuthenticationService) {  }
-  isLoggedIn=false
   logout() {  
     this.authenticationService.logout();  
     this.route.navigate(['']);  
   }  
+  
+  get running(): boolean {
+    return this.authenticationService.running;
+  }
 
   ngOnInit(): void {
-  }
+    this.running
+    console.log("initt"+this.running)
+    
+}
 
 }

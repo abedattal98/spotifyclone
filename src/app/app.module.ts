@@ -41,7 +41,7 @@ export const httpInterceptorProviders = [
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [HttpClient, ArtistService,AlbumService,AuthenticationService  ],
+  providers: [HttpClient, ArtistService,AlbumService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
