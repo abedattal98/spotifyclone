@@ -16,6 +16,5 @@ export class ArtistService {
         'Content-Type':  'application/json',
         'Authorization' : 'Bearer ' + this.SPOTIFY_AUTH
       })
-    return this.apiCaller
-      .request('GET',this.ARTIST_URL+'search?q=' + artist + '&type=artist',{headers})
+    return this.apiCaller.get(this.ARTIST_URL+'search?q=' + artist + '&type=artist',{headers});
 }}
