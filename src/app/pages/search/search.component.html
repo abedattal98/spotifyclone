@@ -1,4 +1,4 @@
 <image></image>
-<app-input-search (newItemEvent)="addItem($event)"></app-input-search>
-<image [searchQuery]='q'></image>
+<app-input-search (SearchEvent)='SearchEventHandler($event)'></app-input-search>
+<image [images]='artists' ></image>
 <router-outlet></router-outlet>
