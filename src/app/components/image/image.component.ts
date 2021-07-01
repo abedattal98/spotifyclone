@@ -29,6 +29,7 @@ export class ImageComponent implements OnInit {
       if (data) {
         this.searching = false;
       }
+      else (        this.route.navigate(['login'])      )
     });
   }
   onClick(event) {

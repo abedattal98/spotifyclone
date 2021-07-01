@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { AlbumService } from '../../services/album.service'; 
 @Component({
   selector: 'app-album',
@@ -13,12 +13,13 @@ export class AlbumComponent implements OnInit {
   handleSuccess(data) {
     this.images = data.items;
   }
-  constructor(private route: ActivatedRoute, private _albumService: AlbumService) { }
+  constructor(private route: ActivatedRoute, private _albumService: AlbumService, private routee:Router) { }
   searchImages(query: string) {
     return this._albumService.getImage(query).subscribe((data: any[]) => {
       this.handleSuccess(data);
       if (data) {
       }
+      else(this.routee.navigate(['login']))
     });
   }
 
