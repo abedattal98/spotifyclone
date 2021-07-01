@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { ImageComponent } from './components/image/image.component';
+import { ImageComponent } from './components/image-list/image.component';
 import { NoopInterceptor } from './MyInterceptor';
 import { ArtistService } from './services/artist.service';
 import { FormsModule } from '@angular/forms';

@@ -5,7 +5,7 @@ import { fromEvent } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 @Component({
-  selector: 'image',
+  selector: 'image-list',
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css'],
 })
