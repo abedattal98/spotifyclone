@@ -11,10 +11,7 @@ export class SearchComponent implements OnInit {
   q: string = null;
   artists: any[];
   searching = false;
-  addItem(newItem: string) {
-    this.q = newItem
-    console.log("emitted" + this.q)
-  }
+ 
   constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {

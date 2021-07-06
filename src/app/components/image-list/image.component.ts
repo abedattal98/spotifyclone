@@ -11,8 +11,6 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class ImageComponent implements OnInit {
   @Input() images: any[];
-  imagesFound: boolean = false;
-  searching: boolean = false;
   imgnull = 'https://media.wired.com/photos/5927001eaf95806129f51539/master/w_2560%2Cc_limit/spotify-logo-zoom-s.jpg'
   constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router ) {}
 

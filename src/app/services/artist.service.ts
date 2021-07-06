@@ -5,7 +5,6 @@ import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ArtistService {
-  private query: string;
   private ARTIST_URL: string = environment.ARTIST_URL;
   private SPOTIFY_AUTH: string = localStorage.getItem('accessToken')
   constructor(private apiCaller: HttpClient) {

@@ -11,8 +11,6 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class LoginButtonComponent implements OnInit {
    private accessToken: string = null;
     id: string;
-    snapshotParam = "initial value";
-    subscribedParam = "initial value";
     myvar=''
 
   constructor(private _auth: AuthenticationService, private _router: Router) { 

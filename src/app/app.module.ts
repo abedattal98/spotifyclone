@@ -12,7 +12,6 @@ import { RatingComponent } from './components/rating/rating.component';
 import { AlbumComponent } from './components/album/album.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AlbumService } from './services/album.service';
-import { AuthenticationService } from './services/authentication.service';
 import { LoginComponent } from './pages/login/login.component';
 import { SearchComponent } from './pages/search/search.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
