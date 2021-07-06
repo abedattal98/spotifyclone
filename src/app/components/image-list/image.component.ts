@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ArtistService } from '../../services/artist.service';
-import { debounceTime } from 'rxjs/operators';
-import { fromEvent } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'image-list',
   templateUrl: './image.component.html',
@@ -12,7 +8,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class ImageComponent implements OnInit {
   @Input() images: any[];
   imgnull = 'https://media.wired.com/photos/5927001eaf95806129f51539/master/w_2560%2Cc_limit/spotify-logo-zoom-s.jpg'
-  constructor(private _artistService: ArtistService, private routess: ActivatedRoute, private route:Router ) {}
+  constructor( private route:Router ) {}
 
   onClick(event) {
     var target = event.target || event.srcElement || event.currentTarget;
@@ -25,8 +21,6 @@ export class ImageComponent implements OnInit {
 
     this.route.navigate(['artist',x])
   }
-
-  
   ngOnInit(): void {    
   }
 }
